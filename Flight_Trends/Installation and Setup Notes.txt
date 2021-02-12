@@ -1,0 +1,27 @@
+1.Download RGUI
+https://cran.r-project.org/bin/windows/base/R-3.4.3-win.exe
+
+2. a)Run the application as administrator
+  b) Download and install required packages by typing below commands on RGUI command line
+install.packages("klaR")
+install.packages("caret")
+install.packages("data.table")
+install.packages("jsonlite")
+install.packages(lubridate)
+Note: Select any option from cran mirror popup.
+
+3.create folder in C driver called Hack18    <- exact same name
+4. copy Hack18_Flight_Trends_Services.zip and mockwebserver.zip to C://Hack18
+5.extract both files in Hack18 directory
+6.Open eclipse and include jars from ExtraJars java-json.jar ,REngine.jar ,Rserve.jar to your libraries
+7.import 3 projects DelayPredictionService ,PastTrendService ,spring-boot-demo
+8.Once all 3 projects are build
+9.Right click on Application.java from DelayPredService and select run-as.
+10.Right click on Application.java from PastTrendService and select run-as.
+11.Right click on SpringBootWebApplication.java from mockwebserverHack18 and select run-as.
+12.open browser
+type this URL localhost:8093 
+it will take you to home page
+fill form and click search button
+availpage will load
+open a flight card and click on Preview Delay Trends

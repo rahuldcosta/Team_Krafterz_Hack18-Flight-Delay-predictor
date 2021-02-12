@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<script src="https://rawgit.com/nnnick/Chart.js/v1.0.2/Chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/Regaddi/Chart.StackedBar.js/master/src/Chart.StackedBar.js"></script>
+
+
+
+<body>
+<div></div>
+<canvas id="myChart" width="210" height="250"></canvas>
+</body>
+
+<script>
+
+var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+var randomColorFactor = function(){ return Math.round(Math.random()*255)};
+
+var barChartData = {
+    labels : ["January","February","March","April","May"],
+	options: {
+        legend: {
+            display: true,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+        }
+},
+    datasets : [
+        {
+            fillColor : "rgba(255, 99, 132, 0.2)",
+            strokeColor : "rgba(255, 99, 132, 0.2)",
+            highlightFill: "rgba(255, 99, 132, 0.2)",
+            highlightStroke: "rgba(255, 99, 132, 0.2)",
+            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        },
+		{
+            fillColor : "rgba(75, 192, 192, 0.2)",
+            strokeColor : "rgba(75, 192, 192, 0.2)",
+            highlightFill: "rgba(75, 192, 192, 0.2)",
+            highlightStroke: "rgba(75, 192, 192, 0.2)",
+            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        },
+		{
+            fillColor : "rgba(153, 102, 255, 0.2)",
+            strokeColor : "rgba(153, 102, 255, 0.2)",
+            highlightFill: "rgba(153, 102, 255, 0.2)",
+            highlightStroke: "rgba(153, 102, 255, 0.2)",
+            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        },
+		{
+            fillColor : "rgba(255, 159, 64, 0.2",
+            strokeColor : "rgba(255, 159, 64, 0.2",
+            highlightFill: "rgba(255, 159, 64, 0.2",
+            highlightStroke: "rgba(255, 159, 64, 0.2",
+            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        }
+    ]
+};
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx).StackedBar(barChartData);
+
+
+
+</script>
+</html>
